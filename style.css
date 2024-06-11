@@ -1,0 +1,160 @@
+@import "icons.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Marcellus", serif;
+}
+
+.active {
+    background-color: black !important;
+    color: white;
+}
+
+.calcss-main {
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100vh
+}
+
+.calcss-inner {
+    padding: 20px;
+    padding-bottom: 0
+}
+
+.calcss-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.calcss-navbar h2 {
+    font-size: 25px
+}
+
+.menu-button {
+    background-color: #fff0;
+    border: none;
+    font-size: 30px
+}
+
+.calcss-options {
+    margin-top: 3%
+}
+
+.calcss-options button {
+    font-size: 15px;
+    padding: 5px 10px;
+    background-color: #fff0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    border-radius: 20px
+}
+
+.calcss-content-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px
+}
+
+.calcss-day-box {
+    color: #000000;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.calcss-day-box p {
+    font-size: 14px
+}
+
+.calcss-day-box p,
+.calcss-day-box h4 {
+    margin: 0
+}
+
+.calcss-box-left {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 10px;
+    margin-right: 20px;
+    border-right: 1px solid
+}
+
+.calcss-loader {
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10
+}
+
+.dotsCss {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 20px;
+    transform: translate(0, -40px);
+    animation: bounce 1s infinite
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s
+}
+
+.calcss-calName {
+    font-weight: 100;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0, -10px)
+    }
+
+    40% {
+        width: 0;
+        height: 2px;
+        transform: translate(0, 40px) scale(1.7)
+    }
+
+    100% {
+        height: 20px;
+        transform: translate(0, -20px)
+    }
+}

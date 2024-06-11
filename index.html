@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js></script>
+    <title>Events Calendar</title>
+    <link rel=stylesheet href=./style.css>
+</head>
+
+<body>
+    <div class=calcss-main ng-app=myApp ng-controller=myController>
+        <div class=calcss-loader ng-if=loader>
+            <div class=dotsCss>
+                <div class=dot></div>
+                <div class=dot></div>
+                <div class=dot></div>
+            </div>
+        </div>
+        <div class=calcss-inner>
+            <div class=calcss-navbar>
+                <h2>Events Calendar</h2>
+                <!-- <button class=menu-button>
+                    <span class=jam--menu></span>
+                </button> -->
+            </div>
+            <h1 class=calcss-calName>Filter by</h1>
+            <div class=calcss-options>
+                <button class=calcss-ops-all ng-click="filterSelect = 'year'"
+                    ng-class="{active: filterSelect == 'year'}">{{currentYear}}</button>
+                <button class=calcss-crntMonth ng-click="filterSelect = 'month'"
+                    ng-class="{active: filterSelect == 'month'}">{{currentMonthName}}</button>
+                <button class=calcss-crntMonth ng-click="filterSelect = 'today'"
+                    ng-class="{active: filterSelect == 'today'}" ng-hide="setActiveData != 'guj'">Today</button>
+                <button class=calcss-crntMonth ng-click="filterSelect = 'upcoming'"
+                    ng-class="{active: filterSelect == 'upcoming'}" ng-hide="setActiveData == 'guj'">Upcoming</button>
+            </div>
+            <div class=calcss-content-main>
+                <div class=calcss-day-box ng-repeat="item in activeData | filter: filteredData"
+                    ng-style="{ animationDelay: $index < 20 ? (($index * 0.125) + 's') : '' }">
+                    <div class=calcss-box-left>
+                        <p>{{item.day}}</p>
+                        <p>{{item.date}}/{{item.month}}/{{item.year}}</p>
+                    </div>
+                    <h4>{{item.title}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src=./app.js></script>
+</body>
+
+</html>
